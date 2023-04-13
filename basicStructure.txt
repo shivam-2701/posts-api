@@ -1,0 +1,16 @@
+/admin/login
+/admin/signup
+
+/user/:uid
+/posts
+
+/posts/:postId
+-- header{
+	Authentication
+	Content-Type
+   }
+-- json body{
+	month, limit = 30, year = current_year, bank = all
+   }
+
+
