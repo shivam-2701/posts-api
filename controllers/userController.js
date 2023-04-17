@@ -26,5 +26,6 @@ exports.getUser = async (req, res, next) => {
         username: userData.username,
         email: userData.email,
         posts: userData.posts,
+        postsPerPage: 10,
     })
 }
