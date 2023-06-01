@@ -1,2 +1,3 @@
 util/constants.js
 node_modules/
+.env

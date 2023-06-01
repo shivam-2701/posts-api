@@ -3,7 +3,8 @@ const jwt = require("jsonwebtoken");
 const { validationResult } = require("express-validator");
 
 const { User } = require("../models/user");
-const { SALT_ROUNDS, SECRET } = require("../util/constants");
+const SALT_ROUNDS = process.env.SALT_ROUNDS;
+const SECRET = process.env.SECRET;
 
 exports.signup = async (req, res, next) => {
   const errors = validationResult(req).array();

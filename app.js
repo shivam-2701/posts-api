@@ -1,11 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const { config } = require("dotenv");
 
 const { connect } = require("./util/dbHelper");
 const admin = require("./routes/admin");
 const post = require("./routes/postData");
 const user = require("./routes/userData");
 
+config();
 const app = express();
 
 app.use(express.json());
@@ -27,6 +29,7 @@ app.get("/", (req, res, next) => {
 app.use("/admin", admin);
 app.use("/posts", post);
 app.use("/users", user);
+
 app.use((req, res, next) => {
   res.status(404).json({
     message: "404 Not Found",
